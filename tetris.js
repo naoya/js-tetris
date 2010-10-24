@@ -257,6 +257,7 @@ $(function() {
       return;
     block.x++;
   }, false);
+  /* end iPhone */
   
   $('#start').click(
     function (e) {
