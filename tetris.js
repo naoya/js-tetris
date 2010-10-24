@@ -224,6 +224,7 @@ $(function() {
         break;
 
         default:
+          console.log(e.keyCode);
           return;
       }
 
@@ -233,6 +234,29 @@ $(function() {
       block.update(ctx);
     }
   );
+
+  /* iPhone: 処理は keyCode のとことまとめたい */
+  document.getElementById('canvas').addEventListener('touchstart', function () {
+    var tmp = new Block();
+    tmp.initialize(block.x, block.y);
+    tmp.matrix = block.rotate();
+    
+    if (!map.check(tmp, 0, 0))
+      return;
+    block.matrix = tmp.matrix;
+  }, false);
+
+  document.getElementById('left').addEventListener('touchstart', function() {
+    if (!map.check(block, -1, 0))
+      return;
+    block.x--;
+  }, false);
+
+  document.getElementById('right').addEventListener('touchstart', function() {
+    if (!map.check(block, 1, 0))
+      return;
+    block.x++;
+  }, false);
   
   $('#start').click(
     function (e) {
@@ -252,7 +276,7 @@ $(function() {
             block = new Block();
             block.initialize(0, 0);
           }
-        }, 100);
+        }, 200);
       }
     }
   );

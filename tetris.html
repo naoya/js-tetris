@@ -2,20 +2,43 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=200px, user-scalable=no, maximum-scale=0.7" />
     <title>Tetris examples</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="tetris.js"></script>
     <style type="text/css">
+      body {
+       text-align: center;
+      }
       #canvas {
         border: 5px solid gray;
+      }
+
+      .control {
+        font-size: 120%;
+        padding: 10px;
+        /* background-color: rgb(128, 128, 128); */
+        width: 80px;
+        height: 400px;
+      }
+      #left {
+        float: left;
+      }      
+      #right {
+        float: right;
       }
     </style>
   </head>
   <body>
-    <canvas id="canvas" width="200" height="400"></canvas>
-    <div>
+    <p>
       <input type="button" value="start" id="start" />
       <input type="button" value="stop" id="stop" />
-    <div>
+    </p>
+
+    <div class="control" id="left"></div>
+    <canvas id="canvas" width="200" height="400"></canvas>
+    <div class="control" id="right"></div>
+
+    </div>
   </body>
 </html>
