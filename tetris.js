@@ -240,7 +240,7 @@ $(function() {
         tid = setInterval(function () {
           
           ctx.clearRect(0, 0, 200, 400);
-          map.update(ctx, 'rgba(128, 128, 128, 0.7)');
+          map.update(ctx);
           block.update(ctx);
           
           if (map.check(block, 0, 1)) {
